@@ -74,7 +74,7 @@ Rust implementation of [steipete/Trimmy](https://github.com/steipete/Trimmy) for
 ## Test it out
 
 ```bash
-# with some text in your clipboard (just copy below)
+# with some text in your clipboard (just copy below or try any of the examples above)
 wl-paste \
   | cargo run -p hyprsnip-cli -- trim --keep-blank-lines --max-auto-lines 0 \
                         | wl-copy
