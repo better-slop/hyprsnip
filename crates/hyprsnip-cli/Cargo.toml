@@ -1,0 +1,14 @@
+[package]
+name = "hyprsnip-cli"
+edition.workspace = true
+version.workspace = true
+
+[[bin]]
+name = "hyprsnip"
+path = "src/main.rs"
+
+[dependencies]
+clap.workspace = true
+
+hyprsnip-config = { path = "../hyprsnip-config" }
+hyprsnip-utils = { path = "../hyprsnip-utils" }

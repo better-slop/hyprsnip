@@ -1,0 +1,12 @@
+[package]
+name = "hyprsnip-config"
+edition.workspace = true
+version.workspace = true
+
+[dependencies]
+directories.workspace = true
+serde.workspace = true
+toml.workspace = true
+thiserror.workspace = true
+
+hyprsnip-utils = { path = "../hyprsnip-utils" }
