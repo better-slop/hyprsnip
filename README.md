@@ -1,6 +1,6 @@
 # hypsnip
 
-Rust implementation of [steipete/Trimmy])(https://github.com/steipete/Trimmy) for Waybar/Hyprland and, more generally, Wayland compositors.
+Rust implementation of [steipete/Trimmy](https://github.com/steipete/Trimmy) for Waybar/Hyprland and, more generally, Wayland compositors.
 
 ## What it does
 
@@ -70,3 +70,12 @@ Rust implementation of [steipete/Trimmy])(https://github.com/steipete/Trimmy) fo
   - hyprsnip-utils
   - hyprsnip-cli
   - hyprsnip-config
+
+## Test it out
+
+```bash
+# with some text in your clipboard (just copy below)
+wl-paste \
+  | cargo run -p hyprsnip-cli -- trim --keep-blank-lines --max-auto-lines 0 \
+                        | wl-copy
+```
