@@ -1,10 +1,10 @@
 # hypsnip
 
-Port of [steipete/Trimmy])(https://github.com/steipete/Trimmy) for Waybar/Hyprland and, more generally, wayland compositors.
+Rust implementation of [steipete/Trimmy])(https://github.com/steipete/Trimmy) for Waybar/Hyprland and, more generally, Wayland compositors.
 
 ## What it does
 
-- Lives in your Waybar
+- Lives in your Waybar or in the terminal (pipe to `hyprsnip`)
 - Watches the clipboard, and, when it looks like a shell command, removes newlines (respects `\` continuations) and rewrites the clipboard automatically
 - Strips leading shell prompts (`#`/`%`/`>`/`$`) when the line looks like a command, while leaving Markdown headings untouched
 - Aggressiveness levels (Low/Normal/High) to control how eagerly it detects commands:
@@ -45,3 +45,28 @@ Port of [steipete/Trimmy])(https://github.com/steipete/Trimmy) for Waybar/Hyprla
   ```
   After: `echo "hello" print status`
 - **Prompt cleanup** — copies that start with `# ` or `$ ` are de-promoted when they look like shell commands, e.g. `# brew install foo` → `brew install foo`; Markdown headings like `# Release Notes` remain untouched.
+
+  Before:
+
+  ```
+    ┃  Can you plan out the application @README.md but in
+  ┃  rust?
+  ```
+
+  After:
+
+  ```
+  Can you plan out the application @README.md but in rust?
+  ```
+
+## Tech
+
+- Rust
+- wl-copy
+
+## Arch
+
+- Crates:
+  - hyprsnip-utils
+  - hyprsnip-cli
+  - hyprsnip-config
